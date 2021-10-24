@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Written by Christopher Beck for Jason Banahan's ACSG 540 course-->
+
+<head>
+    <meta charset="utf-8">
+    <title>Week 9 Assignment</title>
+
+    <script type = "text/javascript">
+
+        var total = 0.0;
+
+        function addApple(){
+            total = total + parseFloat(document.getElementById("apple").value);
+
+        }
+        function addOrange(){
+            total = total + parseFloat(document.getElementById("orange").value);
+
+        }
+        function addBanana(){
+            total = total + parseFloat(document.getElementById("banana").value);
+
+        }
+
+        function totalSubmit(){
+            alert("Your total cost is: $" + (total+(total*.05)));
+
+        }
+
+        function checkReceipt(){
+
+            return false;
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>Exercise 5.3</h1>
+    <p>Please select which fruit you would like:</p>
+
+    <form method = "get" id="5.3Form" onsubmit = "return checkReceipt()">
+
+        <label for = "apple">Apple: </label>
+        <input onclick = "addApple()" type = "checkbox" name = "apple" id = "apple" value = ".59" /> <br />
+        <label for = "orange">Orange: </label>
+        <input onclick="addOrange()" type = "checkbox" name = "orange" id = "orange" value = ".49" /> <br />
+        <label for = "banana">Banana: </label>
+        <input onclick="addBanana()" type = "checkbox" name = "banana" id = "banana" value = ".39" /> <br />
+
+        <input onclick="return totalSubmit()" type = "submit" value = "BUY" />
+
+    </form>
+
+</body>
+
+</html>
